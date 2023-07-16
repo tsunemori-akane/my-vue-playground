@@ -1,6 +1,7 @@
-import type { AppRouteRecordRaw } from "@/types/route-type";
+import type { AppRouteRecordRaw, Menu} from "@/types/route-type";
 import { cloneDeep } from "lodash";
 import { treeMap } from "./treeHelper";
+import { isUrl } from "./is";
 // 路径处理
 function joinParentPath(menus: Menu[], parentPath = "") {
   for (let index = 0; index < menus.length; index++) {

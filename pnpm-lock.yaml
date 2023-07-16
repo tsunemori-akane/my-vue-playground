@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@types/intro.js': ^5.1.1
+  '@types/lodash': ^4.14.195
   '@types/node': ^20.2.5
   '@vitejs/plugin-vue': ^4.1.0
   '@vitejs/plugin-vue-jsx': ^3.0.1
@@ -26,6 +27,7 @@ dependencies:
 
 devDependencies:
   '@types/intro.js': 5.1.1
+  '@types/lodash': 4.14.195
   '@types/node': 20.2.5
   '@vitejs/plugin-vue': 4.2.3_vite@4.3.8+vue@3.3.4
   '@vitejs/plugin-vue-jsx': 3.0.1_vite@4.3.8+vue@3.3.4
@@ -602,12 +604,11 @@ packages:
   /@types/lodash-es/4.17.7:
     resolution: {integrity: sha512-z0ptr6UI10VlU6l5MYhGwS4mC8DZyYer2mCoyysZtSF7p26zOX8UpbrV0YpNYLGS8K4PUFIyEr62IMFFjveSiQ==}
     dependencies:
-      '@types/lodash': 4.14.194
+      '@types/lodash': 4.14.195
     dev: false
 
-  /@types/lodash/4.14.194:
-    resolution: {integrity: sha512-r22s9tAS7imvBt2lyHC9B8AGwWnXaYb1tY09oyLkXDs4vArpYJzw09nj8MLx5VfciBPGIb+ZwG0ssYnEPJxn/g==}
-    dev: false
+  /@types/lodash/4.14.195:
+    resolution: {integrity: sha512-Hwx9EUgdwf2GLarOjQp5ZH8ZmblzcbTBC2wtQWNKARBSxM9ezRIAUpeDTgoQRAFB0+8CNWXVA9+MaSOzOF3nPg==}
 
   /@types/node/20.2.5:
     resolution: {integrity: sha512-JJulVEQXmiY9Px5axXHeYGLSjhkZEnD+MDPDGbCbIAbMslkKwmygtZFy1X6s/075Yo94sf8GuSlFfPzysQrWZQ==}
@@ -976,7 +977,7 @@ packages:
       '@element-plus/icons-vue': 2.1.0_vue@3.3.4
       '@floating-ui/dom': 1.2.8
       '@popperjs/core': /@sxzz/popperjs-es/2.11.7
-      '@types/lodash': 4.14.194
+      '@types/lodash': 4.14.195
       '@types/lodash-es': 4.17.7
       '@vueuse/core': 9.13.0_vue@3.3.4
       async-validator: 4.2.5

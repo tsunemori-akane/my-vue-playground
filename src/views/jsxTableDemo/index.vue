@@ -1,63 +1,84 @@
 <!-- <desc>
   如果使用render函数， 该列指定了prop属性的话，render的第一个参数是该列对应数据项，第二个参数才是scope配置项
   </desc> -->
-  <template>
-    <div>
-      <jsxTable :column="column" :data="tableData" />
-    </div>
-  </template>
+<template>
+  <div>
+    <jsxTable :column="column" :data="tableData" row-key="id" />
+  </div>
+</template>
   
-  <script setup lang="tsx">
-  const column = [
-    {
-      type: "index",
-      width: "60px",
-      label: "序号",
+<script setup lang="tsx">
+const column = [
+  {
+    label: "名字",
+    align: "left",
+    prop: "name",
+    showOverflowTooltip: true,
+    render: (data, scope) => {
+      const { row, column } = scope;
+      const propKey = column.property;
+      return (
+        <span>
+          {row[propKey]}+{data}
+        </span>
+      );
     },
-    {
-      label: "名字",
-      prop: "name",
-      render: (data, scope) => {
-        const { row, column } = scope;
-        const propKey = column.property;
-        return (
-          <div>
-            render 结果 -- {row[propKey]}== {data}
-          </div>
-        );
-      },
-    },
-    {
-      prop: "date",
-      label: "日期",
-    },
-    {
-      prop: "address",
-      label: "地址",
-    },
-  ];
-  const tableData = [
-    {
-      date: "2016-05-02",
-      name: "佘太君",
-      address: "上海市普陀区金沙江路 1518 弄",
-    },
-    {
-      date: "2016-05-04",
-      name: "王小虎",
-      address: "上海市普陀区金沙江路 1517 弄",
-    },
-    {
-      date: "2016-05-01",
-      name: "王小帅",
-      address: "上海市普陀区金沙江路 1519 弄",
-    },
-    {
-      date: "2016-05-03",
-      name: "王小呆",
-      address: "上海市普陀区金沙江路 1516 弄",
-    },
-  ];
-  </script>
+  },
+  {
+    prop: "size",
+    label: "size",
+  },
+  {
+    prop: "address",
+    label: "地址",
+  },
+];
+const tableData = [
+  {
+    id: "1",
+    size: "C",
+    name: "hazel moore",
+    address: "hazel moore",
+    children: [
+      {
+        id: "1.1",
+        size: "C",
+        name: "I love this whore",
+        address: "hazel moore",
+      }
+    ]
+  },
+  {
+    id: "2",
+    size: "D",
+    name: "madison moores",
+    address: "madison moores",
+  },
+  {
+    id: "3",
+    size: "F",
+    name: "firtsbornunicorn",
+    address: "firtsbornunicorn",
+  },
+  {
+    id: "4",
+    size: "F",
+    name: "octavia red",
+    address: "octavia red",
+  },
+  {
+    id: "5",
+    size: "D",
+    name: "Anny walker & Bellamurr",
+    address: "Anny walker & Bellamurr",
+  },
+  {
+    id: "6",
+    size: "D",
+    name: "Brooke Tilli",
+    address: "Brooke Tilli",
+  },
+];
+</script>
   
-  <style lang="scss" scoped></style>
+<style lang="scss" scoped></style>

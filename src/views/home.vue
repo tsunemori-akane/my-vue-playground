@@ -1,8 +1,49 @@
 <template>
-  home
+  <div class="home"></div>
 </template>
-<script setup lang="ts"></script>
-<style scoped>
+<script setup lang="tsx">
+import { onMounted, unref, computed, onUpdated } from 'vue';
+import useDanmu from "@/hooks/useDamnu/useDanmu";
+
+onMounted(() => {
+  console.log("mounted")
+  handleUseDanmu()
+})
+onUpdated(() => {
+  console.log("updated")
+  handleUseDanmu()
+})
+
+const handleUseDanmu = () => {
+  useDanmu(".home", computed(() => unref([
+    {
+      Message: "nihaoxuanyi",
+      BarrageSeq: 0,
+      Id: 1
+    },
+    {
+      Message: "nihaoxuanyi",
+      BarrageSeq: 1,
+      Id: 2
+    },
+  ])), {tracks: 5})
+}
+</script>
+
+<style scoped lang="scss">
+.home {
+  height: 100%;
+  position: relative;
+}
+.loader {
+    margin: auto;
+    border: 16px solid #bdc3c7;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    animation: coloredspin 4s linear infinite;
+}
+ 
 .logo {
   height: 6em;
   padding: 1.5em;

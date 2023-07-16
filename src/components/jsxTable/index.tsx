@@ -2,6 +2,9 @@ import { defineComponent, App, PropType, createApp } from 'vue';
 import type ElTable from 'element-plus/lib/components/table';
 import type { ElTableColumn } from 'element-plus/lib/components/table';
 
+// import type { ElTable }  from 'element-plus';
+// import type { ElTableColumn } from 'element-plus';
+
 type ElTableType = InstanceType<typeof ElTable>;
 type ElTableProps = ElTableType['$props'];
 
