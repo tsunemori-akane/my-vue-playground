@@ -1,9 +1,13 @@
 <template>
-  <div class="home"></div>
+  <div class="home">
+    <test/>
+  </div>
 </template>
+
 <script setup lang="tsx">
 import { onMounted, unref, computed, onUpdated } from 'vue';
 import useDanmu from "@/hooks/useDamnu/useDanmu";
+import test from "./test.vue"
 
 onMounted(() => {
   console.log("mounted")
@@ -16,16 +20,16 @@ onUpdated(() => {
 
 const handleUseDanmu = () => {
   useDanmu(".home", computed(() => unref([
-    {
-      Message: "nihaoxuanyi",
-      BarrageSeq: 0,
-      Id: 1
-    },
-    {
-      Message: "nihaoxuanyi",
-      BarrageSeq: 1,
-      Id: 2
-    },
+    // {
+    //   Message: "nihaoxuanyi",
+    //   BarrageSeq: 0,
+    //   Id: 1
+    // },
+    // {
+    //   Message: "nihaoxuanyi",
+    //   BarrageSeq: 1,
+    //   Id: 2
+    // },
   ])), {tracks: 5})
 }
 </script>

@@ -3,11 +3,27 @@
   </desc> -->
 <template>
   <div>
-    <jsxTable :column="column" :data="tableData" row-key="id" />
+    <jsxTable ref="refJsxTable" :row-class-name="getRowClassName" :column="column" :data="tableData" row-key="id" />
   </div>
 </template>
   
 <script setup lang="tsx">
+import { onMounted, ref, nextTick } from 'vue';
+import initDrag from "@/hooks/useDaggableTable";
+import "@/hooks/useDaggableTable/jsxTable.scss";
+import type { ElTable } from 'element-plus';
+
+
+const refJsxTable = ref<InstanceType<typeof ElTable>>();
+onMounted(async () => {
+  console.log(refJsxTable.value)
+  await nextTick()
+  initDrag(refJsxTable.value!.$el, "sortRows", "unSortRows")
+})
+const getRowClassName = ({ row }) => {
+  if (row.isChild) return "unSortRows"
+  return "sortRows"
+}
 const column = [
   {
     label: "名字",
@@ -43,6 +59,7 @@ const tableData = [
       {
         id: "1.1",
         size: "C",
+        isChild: true,
         name: "I love this whore",
         address: "hazel moore",
       }
@@ -79,6 +96,7 @@ const tableData = [
     address: "Brooke Tilli",
   },
 ];
+
 </script>
   
 <style lang="scss" scoped></style>
