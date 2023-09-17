@@ -40,6 +40,14 @@ export const routes: RouteRecordRaw[] = [
       title: "gridLayout",
     },
   },
+  {
+    path: "/tree-chart",
+    name: "treeChart",
+    component: () => import("@/views/tree-chart/index.vue"),
+    meta: {
+      title: "tree-chart",
+    },
+  },
 ];
 
 const options: RouterOptions = {

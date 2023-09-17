@@ -13,24 +13,26 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-const list = ref([
-  {id:1},
-  {id:2},
-  {id:3},
-  {id:4},
-  {id:5},
-  {id:6},
-  {id:7},
+const list = ref<Array<{ id: number }>>([
+  { id: 1 },
+  { id: 2 },
+  { id: 3 },
+  { id: 4 },
+  { id: 5 },
+  { id: 6 },
+  { id: 7 },
 ])
 </script>
 <style scoped lang="scss">
 section {
   border: 2px solid #a77;
 }
+
 .layout-grid1 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
+
   .block {
     border: 2px solid rgb(125, 54, 232);
     height: 50px;
@@ -43,19 +45,19 @@ section {
   grid-template-rows: repeat(3, minmax(auto, 1fr));
   gap: 10px;
   background-color: #f2f2f2;
-  padding:10px;
+  padding: 10px;
 
   .grid-item {
     background-color: #fff;
     border: 1px solid #e234f3;
-    color:black;
+    color: black;
     padding: 20px;
     font-size: 30px;
     text-align: center;
   }
+
   .item-4 {
     grid-row: 1 / 3;
     grid-column: 1 / 2;
   }
-}
-</style>
+}</style>

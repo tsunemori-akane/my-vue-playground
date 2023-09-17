@@ -4,6 +4,7 @@ import { transformRouteToMenu } from "@/utils/handleRoutes";
 import type { AppRouteRecordRaw } from "@/types/route-type"
 import { pipe } from "@/utils/my-utils";
 import { useRoute } from "vue-router";
+
 const route = useRoute();
 
 const menuFilter = (items: AppRouteRecordRaw[]) => {

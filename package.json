@@ -9,13 +9,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ssthouse/vue3-tree-chart": "^0.2.6",
     "@vueuse/core": "^10.1.2",
     "axios": "^1.4.0",
     "element-plus": "^2.3.5",
     "intro.js": "^7.0.1",
     "lodash": "^4.17.21",
     "vue": "^3.2.47",
-    "vue-router": "^4.2.1"
+    "vue-router": "^4.2.1",
+    "d3": "^7.2.0"
   },
   "devDependencies": {
     "@types/intro.js": "^5.1.1",
